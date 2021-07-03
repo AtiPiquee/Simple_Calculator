@@ -1,4 +1,5 @@
 from colorama import Fore
+import os
 
 def calculator():
     print(Fore.RED + " ██████╗ █████╗ ██╗      ██████╗██╗   ██╗██╗      █████╗ ████████╗ ██████╗ ██████╗ ")
@@ -18,7 +19,8 @@ def addition():
     result = numone + numtwo
     print(Fore.CYAN + "Le résultat est : ", str(result))
     input()
-    calculator()
+    os.system("cls")
+    main()
 
 def soustraction():
     numone = int(input(Fore.MAGENTA + "Entrez un premier nombre : "))
@@ -26,7 +28,8 @@ def soustraction():
     result = numone - numtwo
     print(Fore.CYAN + "Le résultat est : ", str(result))
     input()
-    calculator()
+    os.system("cls")
+    main()
 
 def multiplication():
     numone = int(input(Fore.MAGENTA + "Entrez un premier nombre : "))
@@ -34,7 +37,8 @@ def multiplication():
     result = numone * numtwo
     print(Fore.CYAN + "Le résultat est : ", str(result))
     input()
-    calculator()
+    os.system("cls")
+    main()
 
 def division():
     numone = int(input(Fore.MAGENTA + "Entrez un premier nombre : "))
@@ -42,24 +46,28 @@ def division():
     result = numone / numtwo
     print(Fore.CYAN + "Le résultat est : ", str(result))
     input()
+    os.system("cls")
+    main()
+
+def main():
     calculator()
+    if choice == 1:
+        addition()
 
-choice = 0
-calculator()
-if choice == 1:
-    addition()
+    elif choice == 2:
+        soustraction()
 
-elif choice == 2:
-    soustraction()
-
-elif choice == 3:
-    multiplication()
+    elif choice == 3:
+        multiplication()
 
 
-elif choice == 4:
-    division()
+    elif choice == 4:
+        division()
 
-else:
-    print(Fore.RED + "Error")
-    input()
-    calculator()
+    else:
+        print(Fore.RED + "Error")
+        input()
+        main()
+
+if __name__ == "__main__":
+    main()
